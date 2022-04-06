@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout</title>
+<style>
+
+/* regra de uso geral
+O que codificamos aqui, é tudo que será usado no site não importando o muito o tamanho da tela
+Neste momento, não usamos media querie */
+*, *::before, *::after { box-sizing: border-box; }
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+html {font-size: 15px;} /* importante para o uso da medida REM */
+
+#container {
+    box-shadow: black 0 0 5px;
+    padding: 5px;
+}
+
+header {
+    background-color: blue;
+    text-align: center;
+    height: 100px;
+}
+/* CSS Reset */
+
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {font-size: 2rem;}
+h2 {font-size: 1.2rem;}
+p {font-size: 1.1rem;}
+nav {background-color: yellow;}
+
+#coluna-um {background-color: greenyellow;}
+#coluna-dois {background-color: red ;}
+#coluna-tres {background-color: aquamarine;}
+
+article {padding: 5px;}
+
+footer {background-color: orange;}
+
+/* Regra para Desing Responsivo */
+
+/* 1 media query: Tela a partir de 700px de largura */
+
+@media screen and (min-width: 700px ) {
+    html {font-size: 18px;}
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {width: 25%;}
+
+    main {/* Flex Container */
+        display: flex;
+        flex-wrap: wrap;/*  permite quebra no fluxo */
+    }
+    #coluna-um,#coluna-dois {width: 50%;}
+}
+
+@media screen and (min-width: 822px) {
+    html {font-size: 20px;}
+    
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #coluna-um, #coluna-dois, #coluna-tres {width: 33.33%;}
+
+    #container {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+
+
+</style>
+</head>
+<body>
+    <div id="container">
+    <!-- Vamos criar um layout responsivo do zero -->
+
+    <!-- CABEÇALHO -->
+    <header>
+    <h1>Site XYZ</h1>
+    <nav>
+        <a href="">link1</a>
+        <a href="">link2</a>
+        <a href="">link3</a>
+    </nav>
+    </header>
+    
+    <!-- CONTEUDO -->
+    <main>
+        <article id="coluna-um">
+            <h2>UM</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque adipisci vitae dicta ab aspernatur exercitationem nulla inventore ad nobis recusandae odit eligendi praesentium pariatur debitis tempora illo amet assumenda ipsa nostrum, maiores obcaecati facilis. Rem numquam atque provident maiores cumque soluta tempore ipsam, quod, voluptatibus harum possimus hic perspiciatis quibusdam!</p>
+
+        </article>
+
+        <article id="coluna-dois">
+            <h2>DOIS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus atque et in distinctio porro commodi ut iusto accusamus beatae explicabo eaque, illum consequuntur itaque repellendus vel quibusdam animi minima. Alias perferendis quae fugit minima quo repellendus, pariatur explicabo. Soluta laudantium tempora at minima facilis nesciunt voluptates, dignissimos in repellendus itaque?</p>
+        </article>
+
+        <article id="coluna-tres">
+            <h2>TRÊS</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque repudiandae dolor dolorem, repellat quidem consectetur minus doloribus deserunt tempore necessitatibus voluptas reprehenderit eos autem. Ipsum ut repudiandae similique molestias sunt maxime beatae id saepe ad, quis sed officia sapiente, aperiam architecto aliquid deleniti, rem nesciunt provident eligendi? Quas, eos blanditiis.</p>
+        </article>
+    </main>
+
+    <!-- RODAPE -->
+    <footer>
+        <p>layout de Exemplo</p>
+    </footer>
+
+    <!-- <section> -->
+    <!-- <article> -->
+    <!-- <aside>----conteudo nao relevante ex:merchan,publi, ad -->
+    </div>
+</body>
+</html>
